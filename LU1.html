@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Role of the Financial Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .quiz-option {
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">The Role of the Financial Manager</h1>
+            <p class="text-lg text-gray-600 mt-2">An Interactive Summary</p>
+        </header>
+
+        <!-- Section 1: Primary Roles -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">Learning Outcome 1: Primary Roles of the Financial Manager</h2>
+            <p class="mb-6">The financial manager plays a crucial role in the success of any organization. Their responsibilities can be broken down into three core functions. Hover over the cards to learn more about each function.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Financial Analysis and Planning -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner shadow-lg">
+                        <div class="flip-card-front bg-blue-500 text-white flex items-center justify-center p-4">
+                            <h3 class="text-xl font-semibold">Financial Analysis & Planning</h3>
+                        </div>
+                        <div class="flip-card-back bg-blue-100 text-blue-900 p-4 flex items-center justify-center">
+                            <p>Involves evaluating the firm's financial health, analyzing financial statements, and creating budgets and forecasts to guide future financial activities.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Investment Decisions -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner shadow-lg">
+                        <div class="flip-card-front bg-green-500 text-white flex items-center justify-center p-4">
+                            <h3 class="text-xl font-semibold">Making Investment Decisions</h3>
+                        </div>
+                        <div class="flip-card-back bg-green-100 text-green-900 p-4 flex items-center justify-center">
+                            <p>Also known as Capital Budgeting, this involves selecting projects and assets to invest in that will generate sufficient returns and contribute to the firm's value.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Financing Decisions -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner shadow-lg">
+                        <div class="flip-card-front bg-purple-500 text-white flex items-center justify-center p-4">
+                            <h3 class="text-xl font-semibold">Making Financing Decisions</h3>
+                        </div>
+                        <div class="flip-card-back bg-purple-100 text-purple-900 p-4 flex items-center justify-center">
+                            <p>This involves determining the optimal mix of debt and equity (Capital Structure) to fund the firm's operations and investments at the lowest possible cost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Balancing Act -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">Learning Outcome 2: The Balancing Act</h2>
+            <p class="mb-6">Financial managers must perform a delicate balancing act between returns, cash distributions, and risk to maximize shareholder wealth. Click the tabs below to explore each component.</p>
+            <div x-data="{ tab: 'returns' }">
+                <div class="flex border-b">
+                    <button @click="tab = 'returns'" :class="{ 'border-indigo-500 text-indigo-600': tab === 'returns' }" class="flex-1 py-2 px-4 text-center font-medium border-b-2 focus:outline-none">Timing of Returns</button>
+                    <button @click="tab = 'distributions'" :class="{ 'border-indigo-500 text-indigo-600': tab === 'distributions' }" class="flex-1 py-2 px-4 text-center font-medium border-b-2 focus:outline-none">Cash Distributions</button>
+                    <button @click="tab = 'risk'" :class="{ 'border-indigo-500 text-indigo-600': tab === 'risk' }" class="flex-1 py-2 px-4 text-center font-medium border-b-2 focus:outline-none">Managing Risk</button>
+                </div>
+                <div class="p-4">
+                    <div x-show="tab === 'returns'">
+                        <h3 class="font-semibold text-lg mb-2">Timing of Returns</h3>
+                        <p>Shareholders expect returns through dividends or share price appreciation. Managers must decide whether to distribute cash now or reinvest it for potentially higher future returns, balancing immediate gratification with long-term growth.</p>
+                    </div>
+                    <div x-show="tab === 'distributions'">
+                        <h3 class="font-semibold text-lg mb-2">Cash Distributions</h3>
+                        <p>The main methods are dividends and share repurchases. Regular dividends signal stability, but reduce cash for reinvestment. Share repurchases can boost share price but may be less reliable in the eyes of investors.</p>
+                    </div>
+                    <div x-show="tab === 'risk'">
+                        <h3 class="font-semibold text-lg mb-2">Prevalent and Pending Risks</h3>
+                        <p>Managers must identify, assess, and mitigate various risks (market, credit, operational). Taking too much risk can jeopardize the firm, while being too conservative can lead to missed opportunities. The goal is to maximize risk-adjusted returns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Ethical Considerations -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">Learning Outcome 3: Ethical Considerations</h2>
+            <p class="mb-6">Ethics are the foundation of a financial manager's conduct. Explore the key ethical pillars below.</p>
+            <div class="space-y-4">
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Fiduciary Duty and Trust</span>
+                        <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>Financial managers have a legal and ethical obligation to act in the best interests of their clients or shareholders. This is the bedrock of trust in the financial system.</p>
+                    </div>
+                </div>
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Transparency and Honesty</span>
+                         <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>Ethical conduct demands complete, accurate, and timely disclosure of financial information. Misleading stakeholders is a severe breach of ethics.</p>
+                    </div>
+                </div>
+                 <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Conflicts of Interest</span>
+                         <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>Managers must identify, disclose, and manage any potential conflicts of interest fairly and transparently, always prioritizing corporate interests over personal gain.</p>
+                    </div>
+                </div>
+                 <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Long-Term vs. Short-Term Gains</span>
+                         <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>An ethical approach focuses on sustainable, long-term value creation for all stakeholders, rather than just maximizing short-term profits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Agency Problem -->
+        <section class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-700">Learning Outcome 4: The Agency Problem</h2>
+            <p class="mb-4">The agency problem arises from the separation of ownership (shareholders) and control (managers) in a corporation.</p>
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6" role="alert">
+                <p class="font-bold">Core Conflict</p>
+                <p>The interests of the manager (agent) may not always align with the interests of the shareholders (principal), leading to potential self-serving behavior.</p>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Agency Costs</h3>
+            <p class="mb-6">These are the costs shareholders bear to mitigate the agency problem. Click to reveal the different types of costs.</p>
+            <div class="space-y-4">
+                 <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Monitoring Costs</span>
+                        <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>Costs incurred by shareholders to oversee managers' actions, such as audit fees and expenses for the board of directors.</p>
+                    </div>
+                </div>
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Bonding Costs</span>
+                         <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>Costs incurred by managers to assure shareholders they are acting in their best interests, such as performance-based compensation.</p>
+                    </div>
+                </div>
+                 <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left font-semibold p-4 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none flex justify-between items-center">
+                        <span>Residual Loss</span>
+                         <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open" x-transition class="p-4 bg-gray-50 rounded-b-md">
+                        <p>The reduction in shareholder wealth that still occurs due to misaligned interests, even after monitoring and bonding costs are incurred.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Check Quiz -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center text-indigo-700">Knowledge Check</h2>
+            <div id="quiz-container"></div>
+            <div id="quiz-results" class="text-center mt-6 font-bold"></div>
+            <div class="text-center mt-4">
+                <button id="submit-quiz" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Submit Answers</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-4 mt-8 text-gray-500 text-sm">
+        <p>This interactive summary is based on the provided learning material on the role of the financial manager.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        const quizContainer = document.getElementById('quiz-container');
+        const submitButton = document.getElementById('submit-quiz');
+        const resultsContainer = document.getElementById('quiz-results');
+
+        const quizQuestions = [
+            {
+                question: "Which of the following is NOT a primary role of a financial manager?",
+                options: ["Financial analysis and planning", "Making investment decisions", "Human resource management", "Making financing decisions"],
+                answer: "Human resource management"
+            },
+            {
+                question: "The process of evaluating and selecting projects or assets for the company to invest in is known as:",
+                options: ["Capital Structure", "Financial Planning", "Capital Budgeting", "Risk Management"],
+                answer: "Capital Budgeting"
+            },
+            {
+                question: "A financial manager's legal and ethical obligation to act in the best interests of shareholders is called:",
+                options: ["Agency Cost", "Fiduciary Duty", "Residual Loss", "Capital Appreciation"],
+                answer: "Fiduciary Duty"
+            },
+            {
+                question: "The conflict of interest between a company's management and its stockholders is known as the:",
+                options: ["Ethical Dilemma", "Agency Problem", "Financing Decision", "Investment Problem"],
+                answer: "Agency Problem"
+            },
+             {
+                question: "Costs incurred by shareholders to oversee the actions of managers, such as audit fees, are called:",
+                options: ["Bonding Costs", "Residual Loss", "Monitoring Costs", "Opportunity Costs"],
+                answer: "Monitoring Costs"
+            }
+        ];
+
+        function buildQuiz() {
+            const output = [];
+            quizQuestions.forEach((currentQuestion, questionNumber) => {
+                const options = [];
+                for (letter in currentQuestion.options) {
+                    options.push(
+                        `<label class="block p-3 my-2 rounded-lg border border-gray-200 quiz-option hover:bg-gray-100 cursor-pointer">
+                            <input type="radio" name="question${questionNumber}" value="${currentQuestion.options[letter]}" class="mr-2">
+                            ${currentQuestion.options[letter]}
+                        </label>`
+                    );
+                }
+                output.push(
+                    `<div class="mb-6">
+                        <div class="font-semibold mb-2">${questionNumber + 1}. ${currentQuestion.question}</div>
+                        <div class="flex flex-col">${options.join('')}</div>
+                    </div>`
+                );
+            });
+            quizContainer.innerHTML = output.join('');
+        }
+
+        function showResults() {
+            const answerContainers = quizContainer.querySelectorAll('.flex-col');
+            let numCorrect = 0;
+
+            quizQuestions.forEach((currentQuestion, questionNumber) => {
+                const answerContainer = answerContainers[questionNumber];
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                const labels = answerContainer.getElementsByTagName('label');
+                for(let i=0; i<labels.length; i++) {
+                    const input = labels[i].querySelector('input');
+                    if(input.value === currentQuestion.answer) {
+                         labels[i].classList.add('bg-green-200', 'border-green-400');
+                    }
+                    if (input.checked && input.value !== currentQuestion.answer) {
+                        labels[i].classList.add('bg-red-200', 'border-red-400');
+                    }
+                }
+
+                if (userAnswer === currentQuestion.answer) {
+                    numCorrect++;
+                }
+            });
+
+            resultsContainer.innerHTML = `You got ${numCorrect} out of ${quizQuestions.length} correct.`;
+            resultsContainer.className = numCorrect >= 3 ? 'text-center mt-6 font-bold text-2xl text-green-600' : 'text-center mt-6 font-bold text-2xl text-red-600';
+            submitButton.style.display = 'none';
+        }
+
+        buildQuiz();
+        submitButton.addEventListener('click', showResults);
+    </script>
+
+</body>
+</html>
